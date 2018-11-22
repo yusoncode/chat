@@ -1,0 +1,299 @@
+<html lang="en" style="font-size: 2px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>聊天界面</title>
+    <!-- 公共样式 -->
+    <link rel="stylesheet" type="text/css" href="../css/public.css"/>
+    <!-- 聊天样式 -->
+    <link rel="stylesheet" type="text/css" href="../css/chat.css"/>
+    <!-- 弹出层样式 脚本自动添加-->
+    <!--<link rel="stylesheet" type="text/css" href="../css/layer_mobile/layer.css">-->
+
+    <!-- jquery脚本 -->
+    <script src="../js/jquery-1.8.2.min.js"></script>
+    <!-- 自适应屏幕大小字体脚本 -->
+    <script src="../js/chat/flexible.js"></script>
+    <!-- 弹出层脚本 -->
+    <script type="text/javascript" src="../js/layer_mobile/layer.js"></script>
+</head>
+
+<body>
+<div id="chat" class="">
+    <header class="position_absolute header">
+        <a class="back" href="javascript:history.back()"></a>
+        <h5 class="tit">群聊</h5>
+        <div class="right"><a onclick="chat.showFriends()">人员</a></div>
+    </header>
+    <div class="message">
+
+        <!--<div class="send">
+            <div class="time">05/22 06:30</div>
+            <div class="msg">
+                <img src="../img/chat_icon.jpg" alt="" class="float_left">
+                <p class="nickname float_left">昵称1</p>
+                <p class="visibility_hidden nickname">昵称1</p>
+                <p class="float_left content"><i class="msg_input"></i>one</p>
+            </div>
+        </div>
+        <div class="show">
+            <div class="msg">
+                <img src="../img/chat_icon.jpg" class="float_right">
+                <p class="nickname float_right">昵称2</p>
+                <p class="visibility_hidden nickname">昵称2</p>
+                <p class="float_right content"><i class="msg_input"></i>123123</p>
+            </div>
+        </div>-->
+    </div>
+    <footer class="footer">
+        <li>
+            <img src="../img/favicon.ico" alt="" class="footer_img">
+        </li>
+        <li onclick="common.showHiddenEmoji(false)">
+            <img src="../img/xiaolian.png" alt="" class="footer_img">
+        </li>
+        <li>
+            <!--<input type="text" class="footer_send_val">-->
+            <article contenteditable="true" class="footer_send_val"></article>
+        </li>
+        <li>
+            <span class="footer_send" onclick="webSocket.sendClick()">发送</span>
+        </li>
+        <div class="clear_both"></div>
+        <div class="emoji">
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/1.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)"src="../img/emoji/2.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/3.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/4.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/5.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/6.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/7.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/8.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/9.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/10.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/11.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/12.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/13.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/14.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/15.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/16.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/17.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/18.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/19.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/20.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/21.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/22.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/23.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/24.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/25.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/26.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/27.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/28.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/29.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/30.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/31.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/32.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/33.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/34.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/35.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/36.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/37.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/38.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/39.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/40.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/41.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/42.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/43.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/44.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/45.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/46.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/47.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/48.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/49.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/50.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/51.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/52.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/53.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/54.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/55.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/56.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/57.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/58.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/59.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/60.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/61.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/62.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/63.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/64.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/65.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/66.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/67.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/68.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/69.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/70.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/71.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/72.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/73.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/74.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/75.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/76.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/77.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/78.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/79.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/80.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/81.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/82.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/83.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/84.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/85.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/86.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/87.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/88.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/89.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/90.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/91.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/92.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/93.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/94.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/95.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/96.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/97.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/98.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/99.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/100.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/101.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/102.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/103.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/104.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/105.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/106.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/107.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/108.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/109.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/110.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/111.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/112.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/113.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/114.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/115.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/116.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/117.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/118.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/119.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/120.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/121.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/122.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/123.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/124.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/125.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/126.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/127.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/128.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/129.gif" alt=""/></li>
+            <li><img onclick="chat.clickEmoje(this)" src="../img/emoji/130.gif" alt=""/></li>
+        </div>
+
+    </footer>
+</div>
+
+<!--成员页面-->
+<div id="friends" class="display_none">
+    <header class="header">
+        <a class="back" onclick="chat.showChat()"></a>
+        <h5 class="tit">成员信息(在线0)</h5>
+    </header>
+    <div class="list">
+
+    </div>
+</div>
+<script src="../js/common.js" type="text/javascript"></script>
+<script src="../js/chat/chat.js" type="text/javascript"></script>
+<script src="../js/chat/websocket.js" type="text/javascript"></script>
+
+<script>
+    $(function () {
+        // window.onload = function(){}
+        //提示过了
+        layer.open({
+            title: [
+                '提示',
+                'background-color:#8DCE16; color:#fff;'
+            ],
+            anim: '',
+            content: '<input type="text" class="input_username footer_send_val" placeholder="输入您的大名"/>',
+            btn: ['确认'],
+            shadeClose: false,
+            yes: function (index) {
+                var userName = $(".input_username").val().trim();
+                if (!userName) {
+                    common.createTip("请输入用户名", 1000, 500);
+                    return;
+                }
+                webSocket.webSocketOpr(userName, common.WEBSOCKET_HOST);
+                $("#chat").show(0);
+                layer.close(index);
+            }
+
+        });
+        // //判断是否提示过
+        // var tipFlag = window.sessionStorage.getItem("websocket-tip");
+        // if(tipFlag > 0){
+        //     //提示过了
+        //     layer.open({
+        //         title: [
+        //             '提示',
+        //             'background-color:#8DCE16; color:#fff;'
+        //         ],
+        //         anim: '',
+        //         content: '<input type="text" class="input_username footer_send_val" placeholder="输入您的大名"/>',
+        //         btn: ['确认'],
+        //         shadeClose: false,
+        //         yes: function (index) {
+        //             var userName = $(".input_username").val().trim();
+        //             if (!userName) {
+        //                 common.createTip("请输入用户名", 1000, 500);
+        //                 return;
+        //             }
+        //             webSocket.webSocketOpr(userName, common.WEBSOCKET_HOST);
+        //             $("#chat").show(0);
+        //             layer.close(index);
+        //         }
+        //
+        //     });
+        // }else{
+        //     common.createTip("基于WebSocket消息实时推送", 2000, 3000, function () {
+        //         common.createTip("前端技术(Html5 + CSS3 + WebSocket)", 1000, 5000, function () {
+        //             common.createTip("后端技术（NodeJS-WebSocket）", 1000, 5000, function () {
+        //                 window.sessionStorage.setItem("websocket-tip", 1);
+        //                 layer.open({
+        //                     title: [
+        //                         '提示',
+        //                         'background-color:#8DCE16; color:#fff;'
+        //                     ],
+        //                     anim: '',
+        //                     content: '<input type="text" class="input_username footer_send_val" placeholder="输入您的大名"/>',
+        //                     btn: ['确认'],
+        //                     shadeClose: false,
+        //                     yes: function (index) {
+        //                         var userName = $(".input_username").val().trim();
+        //                         if (!userName) {
+        //                             common.createTip("请输入用户名", 1000, 500);
+        //                             return;
+        //                         }
+        //                         webSocket.webSocketOpr(userName, common.WEBSOCKET_HOST);
+        //                         $("#chat").show(0);
+        //                         layer.close(index);
+        //                     }
+        //
+        //                 });
+        //             });
+        //         });
+        //     });
+        // }
+    })
+</script>
+</body>
+
+</html>

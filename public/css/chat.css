@@ -1,0 +1,309 @@
+@charset "utf-8";
+
+body{
+}
+.header {
+    border-bottom: 1px solid #dfdfdf;
+    padding: 0 0.2rem;
+    height: 1rem;
+    line-height: 1rem;
+    background: #fff;
+    width: 100%;
+    max-width: 720px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0.3rem;
+    background: url(../img/left.png) no-repeat;
+    width: 0.2rem;
+    height: 0.4rem;
+    margin-top: 0.34rem;
+    background-size: 0.2rem 0.4rem;
+}
+
+.header .tit {
+    font-size: 0.32rem;
+    vertical-align: middle;
+    text-align: center;
+    height: 1rem;
+    line-height: 1rem;
+    font-weight: normal;
+}
+
+.header .right {
+    position: absolute;
+    right: 0.3rem;
+    top: 0;
+    float: none;
+    font-size: 0.24rem;
+    line-height: 1.2rem;
+}
+
+.message {
+    /*background-color: #f1f1f1;*/
+    padding:0.3rem 0.3rem 1rem 0.3rem;
+}
+
+.time {
+    font-size: 0.24rem;
+    color: #999;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 1rem;
+    background-color: #fff;
+    /*line-height: 1rem; 移动端不兼容*/
+    line-height:normal;
+    width: 100%;
+    max-width: 720px;
+    border-top: 1px solid #ddd;
+}
+
+.footer li {
+    float: left;
+    margin-left: 0.2rem;
+}
+
+.footer img {
+    width: 0.5rem;
+}
+
+.footer_img{
+    padding-top:0.3rem;
+}
+
+.footer input {
+    width: 3.5rem;
+    height: 0.64rem;
+    border-radius: 0.1rem;
+    border: 0.01rem solid #ddd;
+    padding: 0 0.15rem;
+}
+
+.footer_send {
+    display: inline-block;
+    font-size: 0.3rem;
+    color: #fff;
+    width: 1.2rem;
+    height: 0.68rem;
+    line-height: 0.68rem;
+    text-align: center;
+    background: #4D9EFC;
+    border-radius: 0.1rem;
+    margin-top: 0.2rem;
+}
+
+.footer_send:hover {
+    background: #4B7ED7;
+    border-color: #4B7ED7;
+}
+
+.footer_send_val{
+    font-size: 0.2rem;
+    width: 3.5rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    border-radius: 0.1rem;
+    margin-top: 0.23rem;
+    border: 1px solid #D0D0D0;
+    text-indent: 0.2rem;
+    overflow: hidden;
+}
+.emoji{
+    height: 3rem;
+    margin-top: 0.3rem;
+    overflow: scroll;
+}
+.emoji li{
+    float: left;
+}
+
+.send:after,
+.show:after,
+.msg:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.msg > img {
+    width: 0.8rem;
+}
+
+.msg > p.content {
+    margin: 0 0.2rem;
+    padding: 0.25rem;
+    background: #fff;
+    font-size: 0.2rem;
+    position: relative;
+    border-radius: 0.2rem;
+    max-width: 5rem;
+    box-sizing: border-box;
+}
+.msg > p.content > img{
+    width: 0.5rem;
+}
+
+.show .msg p.content {
+    background: #4D9EFC;
+    color: #FFF;
+}
+
+.send .msg .nickname {
+    font-size: 0.1rem;
+    margin-left: 0.2rem;
+    margin-bottom: 0.05rem;
+}
+
+.show .msg .nickname {
+    font-size: 0.1rem;
+    margin-bottom: 0.05rem;
+    margin-right: 0.2rem;
+}
+
+.msg_input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 0.15rem solid transparent;
+    border-left: 0.15rem solid transparent;
+    border-bottom: 0.15rem solid transparent;
+    left: -0.3rem;
+}
+
+.send .msg .msg_input {
+    border-right: 0.3rem  solid #FFF;
+}
+
+.show .msg .msg_input {
+    border-right: 0.3rem solid #4D9EFC;
+}
+
+.show .msg_input {
+    left: auto;
+    right: -0.3rem;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -moz-transform: rotate(180deg);
+    /* Firefox */
+    -webkit-transform: rotate(180deg);
+    /* Safari 鍜� Chrome */
+    -o-transform: rotate(180deg);
+    /* Opera */
+}
+
+.send,
+.show {
+    padding-bottom: 0.3rem;
+}
+
+.alert_novip,
+.flower_num,
+.give_flower {
+    display: none;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.28rem;
+}
+
+.alert_novip p,
+.flower_num p {
+    margin-bottom: 0.45rem;
+}
+
+.layui-layer-wrap button {
+    font-size: 0.28rem;
+    padding: 0.2rem 0.3rem;
+    margin-top: 0.1rem;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+.flower_num button {
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+}
+
+.layui-layer-wrap button:first-child {
+    float: left;
+}
+
+.layui-layer-wrap button:last-child {
+    float: right;
+    background: #FF7171;
+    color: #fff;
+}
+
+.alert_novip button {
+    padding: 0.2rem 0.3rem;
+    border-radius: 10px
+}
+
+.flower {
+    width: 0.8rem;
+    margin: 0 auto;
+}
+
+.give_flower {
+    text-align: center;
+}
+
+.give_flower p {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.give_flower input {
+    width: 1rem;
+    margin-right: 0.1rem;
+    margin-top: 0.2rem;
+}
+
+.give_flower button {
+    display: block;
+    width: 3rem;
+    font-size: 0.28rem;
+    margin: 0 auto;
+    margin-top: 0.6rem;
+    float: none !important;
+    line-height: 0.65rem;
+    border-radius: 10px;
+}
+
+.input_username {
+    width: 3.5rem;
+    height: 0.64rem;
+    border-radius: 0.1rem;
+    border: 0.01rem solid #ddd;
+    padding: 0 0.15rem;
+}
+
+/*成员信息*/
+#friends .list {
+    width: 7rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#friends .list li {
+    float: left;
+    margin: 0.18rem;
+    text-align: center;
+}
+
+#friends .list li img {
+    width: 1rem;
+}
+#friends .list li p{
+    margin-top:0.1rem;
+    font-size: 0.1rem;
+}

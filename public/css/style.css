@@ -1,0 +1,138 @@
+.comPopTips {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    z-index: 10003;
+    width: 100%;
+    line-height: 30px;
+    margin-top: -20px;
+}
+
+.comPopTips span {
+    font-size: 24px;
+    background: #000;
+    display: inline-block;
+    height: 30px;
+    padding: 20px 30px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.com_mask_box {
+    background: #000;
+    opacity: 0.7;
+    filter: alpha(opacity=90);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.com_pop_box {
+    background: #fff;
+    width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 -40%;
+    z-index: 10000;
+    border-radius: 5px;
+}
+
+.com_pop_title {
+    background: #4B7ED7;
+    color: #fff;
+    height: 60px;
+    position: relative;
+    line-height: 60px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.com_pop_close {
+    background: url(../img/icon.png) no-repeat 10px -785px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+.com_pop_con {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+}
+
+.com_pop_formBox_limit {
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.com_pop_formBox dd {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.com_pop_form_span {
+    margin: 0;
+    max-width: 90px;
+}
+
+.com_pop_formBox dd input, .com_pop_formBox dd textarea {
+    width: 70%;
+    padding: 0 2%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    outline: none;
+    color: #333;
+    font-size: 12px;
+}
+
+.com_pop_btn {
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    padding: 20px 0 0;
+}
+
+.com_pop_btn span {
+    display: inline-block;
+    float: none;
+}
+
+.com_btn {
+    background: #f4f4f4;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 30px;
+    border-radius: 5px;
+    border: 1px solid #b9b9c1;
+    float: left;
+    margin-right: 20px;
+}
+
+.com_btn_focus {
+    background: #4D9EFC;
+    color: #fff;
+    border-color: #4B7ED7;
+    cursor: pointer;
+}
+
+.com_btn_focus:active{
+    background: #4B7ED7;
+    color: #fff;
+    border-color: #4B7ED7;
+    cursor: pointer;
+}
