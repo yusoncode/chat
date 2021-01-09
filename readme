@@ -1,0 +1,44 @@
+前端技术(javascript + jquery + layer-mobile + html5 + css3 + websocket)
+    布局:
+    1.不可放大缩小,
+    2.单位：rem,
+    3.全局字体按屏幕比例变化,
+    4.padding布局,
+
+    功能
+    1.必須輸入用戶名，进行连接,
+    2.自己发消息显示右，别人发送消息显示左边，滚动到最新消息,
+    3.每次刷新关闭连接,
+    4.发送表情(把img标签替换成[emoji:id],) id对应图标标识
+
+    未完成：
+    1.发送图片
+
+
+后端技术（nodejs-websocket）
+
+       安全：
+           1.用户认证
+           2.消息加密
+           3.使用缓存
+       功能：
+             1.通过url绑定每个用户的连接（用户ID随机且不重复）
+             2.广播数据
+             3.关闭，异常，移除连接，回显XXX，已掉线
+             4.数据格式
+                  data '{"userId":XXX,"userName":XXX,"type":0,"content":XXX,"timeStr":XXX,"connNums": XXX,"userArray": [{userId:XXX,userName:XXX},]}'
+                  userId:用户ID
+                  userName:用户名
+                  type:类型 [1:普通消息，2：系统通知]
+                  content:内容
+                  timeStr:时间格式化
+                  connNums:连接数
+                  userArray:用户数组
+
+       未完成功能：
+           1.单聊
+           2.图片
+           3.客户端连接数量最多256
+
+
+

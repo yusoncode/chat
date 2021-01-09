@@ -1,6 +1,6 @@
 var common = {
     WEBSOCKET_SESSIONSTORAGE_NAME: "websocket",
-    WEBSOCKET_HOST: "ws://103.45.100.119:8080",
+    WEBSOCKET_HOST: "ws://127.0.0.1:8080",
     /**
      *
      * @param content
